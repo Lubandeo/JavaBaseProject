@@ -1,5 +1,6 @@
 package com.mobile.tandil.javabaseproject.mvp.presenter;
 
+import com.mobile.tandil.javabaseproject.listener.ListenerDialogFragment;
 import com.mobile.tandil.javabaseproject.mvp.contract.ParkingContract;
 
 public class ParkingPresenter implements ParkingContract.Presenter {
@@ -13,8 +14,13 @@ public class ParkingPresenter implements ParkingContract.Presenter {
     }
 
     @Override
-    public void onShowButtonPressed() {
-        model.setParkingAvailable(10);
+    public void onShowButtonPressed(ListenerDialogFragment dialogFragmentListener) {
+        view.showDialogFragment(dialogFragmentListener);
+    }
+
+    @Override
+    public void listenParkingAvailable(String parkingAvailable) {
+        model.setParkingAvailable(Integer.parseInt(parkingAvailable));
         view.showNumberOfParkingAvailable(String.valueOf(model.getParkingAvailable()));
     }
 
