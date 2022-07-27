@@ -2,4 +2,7 @@
 <resources>
     <dimen name="main_activity_text_view_margin_top">30dp</dimen>
     <dimen name="main_activity_text_size">20sp</dimen>
+    <dimen name="main_activity_text_padding">20dp</dimen>
+    <dimen name="dialog_fragment_text_margin_top">30dp</dimen>
+    <dimen name="dialog_fragment_text_padding">20dp</dimen>
 </resources>

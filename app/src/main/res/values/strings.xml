@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">JavaBaseProject</string>
     <string name="text_button_main_activity">Number of parking available</string>
-    <string name="text_view_main_activity">Press the button to see the number of parking spaces available</string>
+    <string name="text_view_main_activity">Press the button to set the number of parking spaces available</string>
+    <string name="text_button_ok_dialog_fragment">OK</string>
+    <string name="text_button_cancel_dialog_fragment">CANCEL</string>
+    <string name="text_view_dialog_fragment">Set the number of parking available</string>
+    <string name="error_message">Please enter a number of parking available</string>
 </resources>
