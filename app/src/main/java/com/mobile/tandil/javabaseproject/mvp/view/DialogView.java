@@ -28,4 +28,11 @@ public class DialogView extends FragmentView implements DialogFragmentContract.V
             Toast.makeText(context, context.getString(R.string.error_message), Toast.LENGTH_LONG).show();
         }
     }
+
+    public void showMinSpacesMessage() {
+        Context context = getContext();
+        if (context != null) {
+            Toast.makeText(context, context.getString(R.string.error_message_min_spaces), Toast.LENGTH_LONG).show();
+        }
+    }
 }

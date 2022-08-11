@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_activity_purple_background">#7B87CA</color>
     <color name="main_activity_white_text">#F8EFEE</color>
+    <color name="reservation_activity_purple_background">#99A5EA</color>
+    <color name="pickers_dialog_fragment_purple_background">#545E93</color>
+    <color name="buttons_grey_background">#635F5F</color>
 </resources>

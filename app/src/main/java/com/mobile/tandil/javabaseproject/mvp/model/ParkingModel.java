@@ -1,18 +1,26 @@
 package com.mobile.tandil.javabaseproject.mvp.model;
 
+import com.mobile.tandil.javabaseproject.database.ReservationDatabase;
 import com.mobile.tandil.javabaseproject.mvp.contract.ParkingContract;
+import com.mobile.tandil.javabaseproject.utils.Constants;
+
 
 public class ParkingModel implements ParkingContract.Model {
 
-    private int parkingAvailable = -1;
+    private ReservationDatabase database;
 
-    @Override
-    public void setParkingAvailable(int parkingAvailable) {
-        this.parkingAvailable = parkingAvailable;
+    public ParkingModel(ReservationDatabase database){
+        this.database=database;
     }
 
     @Override
-    public int getParkingAvailable() {
-        return parkingAvailable;
+    public String getParkingLots() {
+
+        return database.getParkingLots();
+    }
+
+    @Override
+    public void setParkingLots(String parkingAvailable) {
+        database.setParkingLots(parkingAvailable);
     }
 }
