@@ -5,19 +5,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
 import com.mobile.tandil.javabaseproject.databinding.ParkingDialogFragmentBinding;
 import com.mobile.tandil.javabaseproject.listener.ListenerDialogFragment;
 import com.mobile.tandil.javabaseproject.mvp.contract.DialogFragmentContract;
 import com.mobile.tandil.javabaseproject.mvp.presenter.DialogFragmentPresenter;
 import com.mobile.tandil.javabaseproject.mvp.view.DialogView;
+import com.mobile.tandil.javabaseproject.utils.Constants;
 
 public class ParkingDialogFragment extends DialogFragment {
 
     private DialogFragmentContract.Presenter presenter;
-    private static final String LISTENER_KEY = "LISTENER_KEY";
-    public static final String TAG = "PARKING_DIALOG_FRAGMENT";
     private ListenerDialogFragment dialogFragmentListener;
     private ParkingDialogFragmentBinding binding;
 
@@ -33,7 +34,7 @@ public class ParkingDialogFragment extends DialogFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         presenter = new DialogFragmentPresenter(new DialogView(this));
-        dialogFragmentListener = (ListenerDialogFragment) getArguments().getSerializable(LISTENER_KEY);
+        dialogFragmentListener = (ListenerDialogFragment) getArguments().getSerializable(Constants.LISTENER_SET_PARKING_KEY);
         setListeners();
     }
 
@@ -46,8 +47,9 @@ public class ParkingDialogFragment extends DialogFragment {
     public static ParkingDialogFragment newInstance(ListenerDialogFragment dialogFragmentListener) {
         ParkingDialogFragment dialogFragment = new ParkingDialogFragment();
         Bundle bundle = new Bundle();
-        bundle.putSerializable(LISTENER_KEY, dialogFragmentListener);
+        bundle.putSerializable(Constants.LISTENER_SET_PARKING_KEY, dialogFragmentListener);
         dialogFragment.setArguments(bundle);
+        dialogFragment.setCancelable(false);
         return dialogFragment;
     }
 

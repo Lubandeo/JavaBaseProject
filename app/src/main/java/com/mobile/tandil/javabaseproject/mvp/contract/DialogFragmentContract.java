@@ -8,6 +8,8 @@ public interface DialogFragmentContract {
         void showParkingAvailable(String parkingAvailable, ListenerDialogFragment dialogFragmentListener);
 
         void showInvalidMessage();
+
+        void showMinSpacesMessage();
     }
 
     interface Presenter {

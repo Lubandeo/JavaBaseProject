@@ -5,19 +5,24 @@ import com.mobile.tandil.javabaseproject.listener.ListenerDialogFragment;
 public interface ParkingContract {
 
     interface Model {
-        int getParkingAvailable();
-
-        void setParkingAvailable(int parkingAvailable);
+        String getParkingLots();
+        void setParkingLots(String parkingAvailable);
     }
 
     interface View {
         void showDialogFragment(ListenerDialogFragment dialogFragmentListener);
 
+        void showReservationActivity();
+
         void showNumberOfParkingAvailable(String numberOfParking);
+
+        void showSetParkingFirstMessage();
     }
 
     interface Presenter {
         void onShowButtonPressed(ListenerDialogFragment dialogFragmentListener);
+
+        void onReservationButtonPressed();
 
         void listenParkingAvailable(String parkingAvailable);
     }
