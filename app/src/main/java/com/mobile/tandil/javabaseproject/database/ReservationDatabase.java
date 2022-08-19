@@ -43,4 +43,8 @@ public class ReservationDatabase {
         this.parkingLots = Integer.parseInt(parkingLots);
     }
 
+    public void clearDatabase() {
+        reservations.clear();
+    }
+
 }

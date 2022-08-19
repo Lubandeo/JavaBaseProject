@@ -79,10 +79,23 @@ public class ReservationView extends ActivityView implements ReservationContract
     }
 
     @Override
-    public void showExceptionInputStringMessage(){
+    public void showReservationSuccessful() {
+        showValidationsMessage(R.string.message_reservation_successful);
+        finishActivity();
+    }
+
+    @Override
+    public void showExceptionInputStringMessage() {
         Context context = getContext();
         if (context != null) {
             Toast.makeText(context, R.string.text_exception_parse_empty_string, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void finishActivity() {
+
+        Activity activity = (Activity) this.getActivity();
+        if (activity != null)
+            activity.finish();
     }
 }
