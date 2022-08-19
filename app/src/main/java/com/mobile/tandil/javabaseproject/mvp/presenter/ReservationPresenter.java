@@ -36,8 +36,7 @@ public class ReservationPresenter implements ReservationContract.ReservationPres
         view.showCheckOut(date);
     }
 
-    @Override
-    public boolean validateReservation(String checkIn, String checkOut, String code, String parkingSpace) {
+    private boolean validateReservation(String checkIn, String checkOut, String code, String parkingSpace) {
         Calendar startDate = DateUtils.convertToCalendar(checkIn);
         Calendar endDate = DateUtils.convertToCalendar(checkOut);
         boolean valid = false;
@@ -73,15 +72,11 @@ public class ReservationPresenter implements ReservationContract.ReservationPres
         try {
             parking = Integer.parseInt(parkingSpace);
             if (validateReservation(checkIn, checkOut, code, String.valueOf(parking))) {
-                addReservation(new Reservation(checkIn, checkOut, code, parkingSpace));
+                model.addReservation(new Reservation(checkIn, checkOut, code, parkingSpace));
+                view.showReservationSuccessful();
             }
         } catch (NumberFormatException e) {
             view.showExceptionInputStringMessage();
         }
-    }
-
-    @Override
-    public void addReservation(Reservation reservation) {
-        model.addReservation(reservation);
     }
 }

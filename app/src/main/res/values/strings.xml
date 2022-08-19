@@ -22,6 +22,7 @@
     <string name="message_validations_non_existent_parking">The selected parking is non existent. Please select another one.</string>
     <string name="message_validations_existent_reservation">The reservation already exists. Make a different one.</string>
     <string name="message_validations_confirm_reservation">Your reservation has been saved.</string>
+    <string name="message_reservation_successful">Reservation saved successfully.</string>
     <string name="reservation_activity_parking_hint">Select parking</string>
     <string name="reservation_activity_code_hint">Security code</string>
     <string name="text_view_reservation_check_in">Click on the buttons below to insert the check-in/check-out date and time.</string>

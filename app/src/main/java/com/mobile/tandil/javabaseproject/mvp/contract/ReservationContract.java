@@ -3,7 +3,6 @@ package com.mobile.tandil.javabaseproject.mvp.contract;
 import com.mobile.tandil.javabaseproject.entity.Reservation;
 import com.mobile.tandil.javabaseproject.listener.ListenerReservation;
 import com.mobile.tandil.javabaseproject.utils.ValidationEnums;
-
 import java.util.Calendar;
 
 public interface ReservationContract {
@@ -14,10 +13,6 @@ public interface ReservationContract {
         void setCheckOut(Calendar exitDate);
 
         void showPickers(ListenerReservation listenerReservation, Boolean selectDate);
-
-        void addReservation(Reservation reservation);
-
-        boolean validateReservation(String checkIn, String checkOut, String code, String parkingSpace);
 
         void saveReservation(String checkIn, String checkOut, String code, String parkingSpace);
     }
@@ -44,8 +39,9 @@ public interface ReservationContract {
 
         void showEverythingOkMessage();
 
-        void showExceptionInputStringMessage();
+        void showReservationSuccessful();
 
+        void showExceptionInputStringMessage();
     }
 
     interface ReservationModel {
@@ -53,6 +49,5 @@ public interface ReservationContract {
         void addReservation(Reservation reservation);
 
         ValidationEnums validateReservation(Calendar startDate, Calendar endDate, String code, String parkingSpace);
-
     }
 }

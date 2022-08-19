@@ -28,7 +28,7 @@ public class ReservationModel implements ReservationContract.ReservationModel {
         int reservation = Constants.EMPTY_PARKING;
         if (reservations != null && reservations.size() > Constants.EMPTY_PARKING) {
             while (!reservationExists && reservation < reservations.size()) {
-                if (checkIn.before(reservations.get(reservation).getCheckOutDate()) || checkOut.after(reservations.get(reservation).getCheckInDate())) {
+                if ((parking == Integer.parseInt(reservations.get(reservation).getParkingSpace())) && (checkIn.before(reservations.get(reservation).getCheckOutDate()) || checkOut.after(reservations.get(reservation).getCheckInDate()))) {
                     reservationExists = true;
                     reservation++;
                 }

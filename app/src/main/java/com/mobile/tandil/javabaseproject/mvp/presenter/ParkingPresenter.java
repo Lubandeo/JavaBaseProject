@@ -21,13 +21,17 @@ public class ParkingPresenter implements ParkingContract.Presenter {
 
     @Override
     public void listenParkingAvailable(String parkingAvailable) {
-        model.setParkingLots(parkingAvailable);
-        view.showNumberOfParkingAvailable(String.valueOf(model.getParkingLots()));
+        if (parkingAvailable.isEmpty()) {
+            view.showSetParkingFirstMessage();
+        } else {
+            model.setParkingLots(parkingAvailable);
+            view.showNumberOfParkingAvailable(String.valueOf(model.getParkingLots()));
+        }
     }
 
     @Override
     public void onReservationButtonPressed() {
-        if (Integer.parseInt(model.getParkingLots()) > Constants.DEFAULT_PARKING){
+        if (Integer.parseInt(model.getParkingLots()) > Constants.DEFAULT_PARKING) {
             view.showReservationActivity();
         } else {
             view.showSetParkingFirstMessage();
